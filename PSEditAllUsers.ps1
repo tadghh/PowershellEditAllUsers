@@ -1,4 +1,4 @@
-#Credit to : https://www.pdq.com/blog/modifying-the-registry-of-another-user/
+# Credit to : https://www.pdq.com/blog/modifying-the-registry-of-another-user/
 # Regex pattern for SIDs
 $PatternSID = 'S-1-5-21-\d+-\d+\-\d+\-\d+$'
 
@@ -20,8 +20,9 @@ Foreach ($item in $ProfileList) {
     IF ($item.SID -in $UnloadedHives.SID) {
         reg load HKU\$($Item.SID) $($Item.UserHive) | Out-Null
     }
-
-   #Changes all users scrollbars to be 13px thick
+    
+    #Your changes should go here!
+    #Changes all users scrollbars to be 13px thick
     Set-ItemProperty registry::HKEY_USERS\$($Item.SID )\"Control Panel"\Desktop\WindowMetrics\ -Name ScrollHeight -Value (-165) -Type String
     Set-ItemProperty registry::HKEY_USERS\$( $Item.SID)\"Control Panel"\Desktop\WindowMetrics\ -Name ScrollWidth -Value (-165) -Type String
     Get-ItemProperty registry::HKEY_USERS\$( $Item.SID )\"Control Panel"\Desktop\WindowMetrics\
