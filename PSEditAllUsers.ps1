@@ -22,7 +22,7 @@ Foreach ($item in $ProfileList) {
     #Changes all users scrollbars to be 13px thick
     Set-ItemProperty registry::HKEY_USERS\$($Item.SID)\"Control Panel"\Desktop\WindowMetrics\ -Name ScrollHeight -Value (-165) -Type String
     Set-ItemProperty registry::HKEY_USERS\$($Item.SID)\"Control Panel"\Desktop\WindowMetrics\ -Name ScrollWidth -Value (-165) -Type String
-    Get-ItemProperty registry::HKEY_USERS\$($Item.SID )\"Control Panel"\Desktop\WindowMetrics\
+    Get-ItemProperty registry::HKEY_USERS\$($Item.SID)\"Control Panel"\Desktop\WindowMetrics\
     Write-Host $Item.SID
     #####################################################################
 
