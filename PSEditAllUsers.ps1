@@ -19,11 +19,8 @@ Foreach ($item in $ProfileList) {
         reg load HKU\$($Item.SID) $($Item.UserHive) | Out-Null
     }
 
-    #Changes all users scrollbars to be 13px thick default 17px
-    Set-ItemProperty registry::HKEY_USERS\$($Item.SID)\"Control Panel"\Desktop\WindowMetrics\ -Name ScrollHeight -Value (-165) -Type String
-    Set-ItemProperty registry::HKEY_USERS\$($Item.SID)\"Control Panel"\Desktop\WindowMetrics\ -Name ScrollWidth -Value (-165) -Type String
-    Get-ItemProperty registry::HKEY_USERS\$($Item.SID)\"Control Panel"\Desktop\WindowMetrics\
-    Write-Host $Item.SID
+    #Put your code here
+   
     #####################################################################
 
     # Unload ntuser.dat
